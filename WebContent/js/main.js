@@ -14,22 +14,23 @@ var findAllBooks=function(){
 }
 
 var renderList = function(data){
-	//list = data.user;
-	console.log(data);
-	console.log("response");
+	$('#user_count').append(data.length);
 	$.each(data, function(index,dat) {
 		$('#table_body').append('<tr><td>'+dat.user_id+'</td><td>'+
 				dat.origname+'</td><td>'+dat.username+'<td><button type="button" class="btn btn-info btn-sm">Edit</button></td></tr>');
 	});
 	$('#table_id').DataTable();
+	
 }
-
+var worth = 0;
+var avail =0;
 var renderListBooks = function(data){
-	console.log(data);
+	$('#book_count').append(data.length);
 	$.each(data, function(index,dat) {
-		console.log(dat.available)
 		if(dat.available===1)
 		{	
+				avail++;
+				worth += dat.price;
 				$('#booktable_body').append('<tr><td>'+dat.bookid+'</td><td>'+
 				dat.title+'</td><td>'+dat.author
 				+'</td><td>'+dat.price+'</td>'
@@ -43,6 +44,8 @@ var renderListBooks = function(data){
 					+'<td><span class="badge badge-danger w-100 py-1">Out of Stock</span></td>'+'<td><button type="button" class="btn btn-info btn-sm">Edit</button></td></tr>');
 		}
 	});
+	$('#book_avail').append(avail);
+	$('#stock_worth').append("Eur "+ worth);
 	$('#booktable_id').DataTable();
 }
 
