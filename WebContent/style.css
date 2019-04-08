@@ -110,8 +110,20 @@ body {
 }
 /* end of task list */
 
+.popup-overlay {
+visibility:hidden;
+}
 
+.popup-content {
+visibility:hidden;
+}
+.popup-overlay.active{
+visibility:visible;
+}
 
+.popup-content.active {
+visibility:visible;
+}
 
 
 

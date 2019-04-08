@@ -6,19 +6,152 @@
     <link rel="icon" href="images/title-img.png">
     <link rel="stylesheet" href="css/bootstrap.css">
      <script src="js/jquery-3.3.1.min.js"></script>
- <!--     <script src="js/jquery.dataTables.js"></script>-->
      <script src="js/popper.min.js"></script>
      <script src="js/bootstrapV4.js"></script>
      <script src="js/all.js"></script>
     <script src="js/script.js"></script>
     <script src="js/jquery.dataTables.js"></script>
     <script src="js/main.js"></script>
-  <!--    <link rel="stylesheet" href="css/jquery.dataTables.css"> -->
-    <link rel="stylesheet" href="style.css">
+    <!--    <link rel="stylesheet" href="css/jquery.dataTables.css">--> 
+       <link rel="stylesheet" href="style.css"> 
     <title>Admin Dashboard</title>
   </head>
   <body>
-    
+  <!--STARTINGG  -->
+<!-- Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <!--  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
+        <h4 class="modal-title" id="loginModalLabel">User Login</h4>
+      </div>
+      <div class="modal-body">
+        <form id="loginform" name="loginform" method="post" action="index.html">>
+          <div class="form-group" id="usernamemodal">
+            <label for="recipient-name" class="control-label">User Name:</label>
+           <!--   <input type="text" class="form-control" id="recipient-name">-->
+           <input type="text" class="form-control">
+          </div>
+          <div class="form-group" id="passwordmodal">
+            <label for="message-text" class="control-label">Password:</label>
+            <input type="password" class="form-control">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+  <!--        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+        <button type="button" class="btn btn-primary" id="loginbtn">Login</button>
+      </div>
+    </div>
+  </div>
+</div>
+ <!-- ENDDING -->	
+    <!--STARTINGG  -->
+<!-- Modal -->
+<div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <!--  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
+        <h4 class="modal-title" id="exampleModalLabel">User Details</h4>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group" id="userid">
+            <label for="recipient-name" class="control-label">User id:</label>
+           <!--   <input type="text" class="form-control" id="recipient-name">-->
+           <input type="text" class="form-control">
+          </div>
+          <div class="form-group" id="originalname">
+            <label for="message-text" class="control-label">First Name:</label>
+            <input type="text" class="form-control">
+          </div>
+          <div class="form-group" id="username">
+            <label for="message-text" class="control-label">User Name:</label>
+            <input type="text" class="form-control">
+          </div>
+          <div class="form-group" id="password">
+            <label for="message-text" class="control-label">Password:</label>
+            <input type="password" class="form-control">
+          </div>
+          <div class="form-group" id="displayimage">
+            <label for="message-text" class="control-label">Image:</label>
+            <input type="text" class="form-control">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="userupdatebtn">Update</button>
+        <button type="button" class="btn btn-primary" id="useraddbtn">Add</button>
+        <button type="button" class="btn btn-danger"  id="userdeletebtn">Delete</button>
+        <button type="button" class="btn btn-primary" id="usersavebtn">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+ <!-- ENDDING -->
+  <!--STARTINGG  -->
+<!-- Modal -->
+<div class="modal fade" id="bookModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <!--  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
+        <h4 class="modal-title" id="exampleModalLabel">Book Details</h4>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group" id="mbookid">
+            <label for="recipient-name" class="control-label">Book id:</label>
+           <input type="text" class="form-control">
+          </div>
+          <div class="form-group" id="mtitle">
+            <label for="message-text" class="control-label">Title:</label>
+            <input type="text" class="form-control">
+          </div>
+          <div class="form-group" id="mauthor">
+            <label for="message-text" class="control-label">Author:</label>
+            <input type="text" class="form-control">
+          </div>
+          <div class="form-group" id="mpublisher">
+            <label for="message-text" class="control-label">Publisher:</label>
+            <input type="text" class="form-control">
+          </div>
+          <div class="form-group" id="mavailable">
+            <label for="message-text" class="control-label">Available:</label>
+            <input type="text" class="form-control">
+          </div>
+          <div class="form-group" id="mprice">
+            <label for="message-text" class="control-label">Price:</label>
+            <input type="text" class="form-control">
+          </div>
+          <div class="form-group" id="mgenre">
+            <label for="message-text" class="control-label">Genre:</label>
+            <input type="text" class="form-control">
+          </div>
+          <div class="form-group" id="mebook">
+            <label for="message-text" class="control-label">E-availability:</label>
+            <input type="text" class="form-control">
+          </div>
+          <div class="form-group" id="mdesc">
+            <label for="message-text" class="control-label">Description:</label>
+            <input type="text" class="form-control">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="bookupdatebtn">Update</button>
+        <button type="button" class="btn btn-primary" id="bookaddbtn">Add</button>
+        <button type="button" class="btn btn-danger"  id="bookdeletebtn">Delete</button>
+        <button type="button" class="btn btn-primary" id="booksavebtn">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+ <!-- ENDDING -->
     <!-- navbar -->
     <nav class="navbar navbar-expand-md navbar-light">
       <button class="navbar-toggler ml-auto mb-2 bg-light" type="button" data-toggle="collapse" data-target="#myNavbar">
@@ -31,8 +164,8 @@
             <div class="col-xl-2 col-lg-3 col-md-4 sidebar fixed-top">
             <a href="#" class="navbar-brand text-white d-block mx-auto text-center py-3 mb-4 bottom-border">Web3 2018</a>
               <div class="bottom-border pb-3">
-                <img src="images/mayo.jpeg" width="50" class="rounded-circle mr-3">
-                <a href="#" class="text-white">Mathew Kuriakose</a>
+                <img id="dp" width="50" class="rounded-circle mr-3">
+                <a href="#" class="text-white" id="mainname"></a>
               </div>
               <ul class="navbar-nav flex-column mt-4">
                 <li class="nav-item"><a href="#" class="nav-link text-white p-3 mb-2 current"><i class="fas fa-home text-light fa-lg mr-3"></i>Dashboard</a></li>
@@ -67,6 +200,9 @@
       </div>
     </nav>
     <!-- end of navbar -->
+<!-- Trigger the modal with a button -->
+ <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button> 
+
 
     <!-- modal -->
     <div class="modal fade" id="sign-out">
@@ -81,11 +217,11 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-success" data-dismiss="modal">Stay Here</button>
-            <button type="button" class="btn btn-danger" data-dismiss="modal">Logout</button>
+            <button id="logout" type="button" class="btn btn-danger" data-dismiss="modal">Logout</button>
           </div>
         </div>
-      </div>
-    </div>
+      </div> 
+    </div> 
     <!-- end of modal -->
 
     <!-- cards -->
@@ -187,7 +323,7 @@
                     </tr>
                   </thead>
                   <tbody id="table_body">
-                  </tbody>
+                   </tbody>
                 </table>
 
                 <!-- pagination -->
@@ -318,10 +454,13 @@
       </div>
     </section>
     <!-- end of tables -->
-   
+   		<!--Creates the popup body-->
+	<!--Creates the popup body-->
+
+   		
     <!-- progress / task list -->
     <section>
- 
+
     </section>
     <!-- end of progress / task list -->
 
